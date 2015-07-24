@@ -47,10 +47,10 @@ func (s *Spy) mutateContainerInCache(id string, status string) {
 	}
 
 	// hostname.(hostdomain.|dnsdomain.)?
-        if domain := container.Config.Domainname, domain != "" {
+        if domain := container.Config.Domainname; domain != "" {
             domain = domain + "."
         } else {
-            if domain := s.dns.domain, domain != "" {
+            if domain = s.dns.domain; domain != "" {
             	domain = domain + "."
             }
         }

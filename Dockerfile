@@ -1,8 +1,4 @@
-FROM scratch
-
-ADD ./docker-spy /bin/docker-spy
+FROM golang:1.4-onbuild
 
 EXPOSE 53
 EXPOSE 53/udp
-
-ENTRYPOINT ["/bin/docker-spy"]
